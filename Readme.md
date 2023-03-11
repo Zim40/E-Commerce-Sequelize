@@ -51,7 +51,8 @@ Performing these steps in order will install the application and allow for acces
 
 <!-- Write steps to installation -->
 
->Note: You *need valid Mysql credentials to create the database, **Warning** This Application deletes and creates a database named "*ecommerce_db*"
+>Note: You *need valid Mysql credentials to create the database*<br>
+ **Warning** This Application deletes and creates a database named "*ecommerce_db*"
 
 ***
 ## Usage
