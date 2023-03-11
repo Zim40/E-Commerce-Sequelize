@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     res.json(products);
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "There has been an ERROR" });
+    res.status(500).send( "There has been an ERROR" );
   }
 });
 
@@ -46,20 +46,21 @@ router.get('/:id', async (req, res) => {
     res.json(product)
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "There has been an ERROR" });
+    res.status(500).send( "There has been an ERROR" );
   }
 });
 
 // create new product
 router.post('/', async (req, res) => {
   try {
-    const { newProduct } = req.body;
-    const productName = await Product.create({ newProduct });
-    res.json(productName);
+    const { product_name } = req.body;
+    const productName = await Product.create({ 
+      product_name });
+    return res.json(productName);
 
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "There has been an ERROR" });
+    res.status(500).send("There has been an ERROR" );
   }
 
   Product.create(req.body)
@@ -126,8 +127,21 @@ router.put('/:id', (req, res) => {
     });
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete one product by its `id` value
+  try {
+    const { id } = req.params;
+    const product = await Product.findByPk(id);
+    if (product === null) {
+      res.status(404).json({mesage: "Could not find product"});
+    } else {
+    await product.destroy();
+    }
+    res.status(200).send('DELETED');
+  } catch (error) {
+    console.log(error);
+    res.status(500).send("There has been an ERROR");
+  }
 });
 
 module.exports = router;
