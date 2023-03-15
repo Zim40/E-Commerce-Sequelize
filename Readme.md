@@ -49,12 +49,46 @@ Tag.belongsToMany(Product,...
 ## Installation
 Performing these steps in order will install the application and allow for access to mock database seed data and express operations.
 
-<!-- Write steps to installation -->
+**1. First begin by opening a terminal and running the following command:**
 
->Note: You *need valid Mysql credentials to create the database*<br>
- **Warning** This Application deletes and creates a database named "*ecommerce_db*"
+```shell
+npm install
+```
+ Once the necessary dependencies have installed you should be able to view the package.json file and see that it contains the following dependencies
+ ```js
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.1.0",
+    "sequelize": "^5.21.7"
+  }
+ ```
+**2. Next we will log into MySQL and create the database.**
 
+>
+To log into MySQL run the following command in your terminal:
+```shell
+mysql -u root -p
+# Enter your Password when prompted
+```
+>**Note:** You *need valid Mysql credentials to create the database*<br>
+
+> **Warning!** This Application deletes and creates a database named "*ecommerce_db*"<br>
+
+**3. Next run the following command to create the database and then exit MySQL.**
+```shell 
+source db/schema.sql
+```
 ***
+**4. Once you have exited from the MySQL database you can finally run the following command to complete setup and seed the newly created Database with data. Following this run 'npm start' to activate the server and begin using routes.**
+```shell
+node seeds/index.js
+```
+```shell
+# Runs server, ready for API calls
+npm start 
+```
+
 ## Usage
 <!-- Describe what can be done in this application and how to do it using insommnia, Screenshot of insomnia with fetch calls -->
 

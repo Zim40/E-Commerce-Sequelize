@@ -124,11 +124,11 @@ router.delete('/:id', async (req, res) => {
     const { id } = req.params;
     const product = await Product.findByPk(id);
     if (!product) {
-      res.status(404).json({mesage: "Could not find product"});
+      res.status(404).json({message: "Could not find product"});
     } else {
     await product.destroy();
     }
-    res.status(200).send('DELETED');
+    res.status(200).json({message:'DELETED'});
   } catch (error) {
     console.log(error);
     res.status(500).json({message: "There has been an ERROR"});
