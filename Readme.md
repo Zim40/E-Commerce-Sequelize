@@ -1,7 +1,7 @@
 <br>
 
 # E-commerce: Sequelize Back-end
-
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)<br>
 <br>
 
 <!-- LICENCE GOES HERE -->
@@ -91,6 +91,34 @@ npm start
 
 ## Usage
 <!-- Describe what can be done in this application and how to do it using insommnia, Screenshot of insomnia with fetch calls -->
+Utilizing [**Insomnia**](https://insomnia.rest/) you will be able to do the following routes;<br>
+**GET** routes<br>
+**POST** routes<br>
+**DELETE** routes<br>
+**POST** routes <br>
+<details>
+  <summary>Here is a list of all available Routes</summary>
+  
+  ### Tags
+   Get **ALL** tags - http://localhost:3001/api/tags<br>
+   Get tags by **Id** - http://localhost:3001/api/tags/3<br>
+   post: **Create** a tag - http://localhost:3001/api/tags<br>
+   ```json
+   {
+	"tag_name": "Sports Wear"
+   }
+   ```
+   Put: **Update** tag - http://localhost:3001/api/tags/1
+   ```json
+  {
+	"tag_name": "Camping Gear"
+  }
+   ```
+   **Delete** a tag - http://localhost:3001/api/tags/1<br>
+  >*For **Categories** and **products** follow the same URL format and corresponding json model attributes.*
+  >
+</details>
+
 
 ***
 ## Contributer
@@ -98,7 +126,7 @@ This application was created by [Zim40](https://github.com/Zim40)
 ## Contact
 [Contact via Email](mailto:michaelm810129@gmail.com)
 ## Licence
-
-## Demo(OPTIONAL)
-
-## Screenshot (OPTIONAL)
+licenced under: MIT<br>
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)<br>
+## Demo
+[Demonstration Video](https://drive.google.com/file/d/1utpiaQnyvnhkSXCo-JFEBQY2FF-P92N0/view)
